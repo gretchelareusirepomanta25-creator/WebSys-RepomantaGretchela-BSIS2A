@@ -1,0 +1,242 @@
+:root {
+    --ink: #173042;
+    --muted: #65747a;
+    --teal: #087f8c;
+    --teal-dark: #075b66;
+    --paper: #f6f2e9;
+    --line: #d7e0da;
+}
+
+body {
+    min-height: 100vh;
+    color: var(--ink);
+    background: var(--paper);
+    font-family: Georgia, "Times New Roman", serif;
+    transition: background-color 180ms ease, color 180ms ease;
+}
+
+body.dark-mode {
+    --ink: #edf4f0;
+    --muted: #b8c8c2;
+    --paper: #182326;
+    --line: #40504e;
+    color: var(--ink);
+    background: var(--paper);
+}
+
+body.dark-mode .site-navbar,
+body.dark-mode .site-footer {
+    background: #10191d;
+}
+
+.site-navbar {
+    background: var(--ink);
+}
+
+.navbar-brand,
+.nav-link {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+}
+
+.navbar-brand {
+    letter-spacing: 0.02em;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #fff;
+}
+
+.showcase-hero {
+    color: #fff;
+    background:
+        linear-gradient(115deg, rgba(8, 127, 140, 0.96), rgba(23, 48, 66, 0.96)),
+        repeating-linear-gradient(45deg, transparent 0 18px, rgba(255, 255, 255, 0.05) 18px 19px);
+}
+
+.section-kicker {
+    margin-bottom: 0.7rem;
+    color: var(--teal);
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.showcase-hero .section-kicker {
+    color: #9fe1d9;
+}
+
+.showcase-hero h1,
+.showcase-hero h2,
+#projects h2,
+#about h2 {
+    letter-spacing: -0.02em;
+}
+
+.hero-panel {
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 0.75rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(0.4rem);
+}
+
+.hero-panel-label {
+    color: #9fe1d9;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    border: 1px solid var(--line);
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.68);
+    transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+body.dark-mode .project-card {
+    background: #243235;
+}
+
+body.dark-mode .form-control,
+body.dark-mode .form-select {
+    border-color: #536763;
+    background-color: #304143;
+    color: #edf4f0;
+}
+
+body.dark-mode .form-control::placeholder {
+    color: #aebfba;
+}
+
+body.dark-mode .btn-outline-dark {
+    border-color: #b8c8c2;
+    color: #edf4f0;
+}
+
+body.dark-mode .btn-outline-dark:hover {
+    background: #edf4f0;
+    color: #243235;
+}
+
+.project-card:hover {
+    border-color: var(--teal);
+    box-shadow: 0 0.75rem 1.5rem rgba(23, 48, 66, 0.1);
+    transform: translateY(-0.2rem);
+}
+
+.project-card p {
+    min-height: 3.6rem;
+    color: var(--muted);
+    line-height: 1.55;
+}
+
+#map {
+    min-height: 25rem;
+    width: 100%;
+    border-radius: 0.5rem;
+    background: #dce9e6;
+}
+
+#location-status {
+    color: var(--muted);
+}
+
+.project-number {
+    margin-bottom: 2rem;
+    color: var(--teal);
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.project-card .btn {
+    align-self: flex-start;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+}
+
+.project-card-accent {
+    border-color: var(--teal-dark);
+    color: #fff;
+    background: var(--teal-dark);
+}
+
+.project-card-accent .project-number {
+    color: #9fe1d9;
+}
+
+.project-card-accent p {
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.lab-notes {
+    border-top: 1px solid var(--line);
+    background: #e9efe9;
+}
+
+.personal-note {
+    border-top: 1px solid var(--line);
+    background: rgba(255, 255, 255, 0.42);
+}
+
+.personal-note-text {
+    max-width: 42rem;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+body.dark-mode .personal-note {
+    background: #1d2b2f;
+}
+
+.note-item {
+    height: 100%;
+    padding: 1rem;
+    border-left: 3px solid var(--teal);
+    background: rgba(255, 255, 255, 0.65);
+}
+
+.note-item strong,
+.note-item span {
+    display: block;
+}
+
+.note-item strong {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+}
+
+.note-item span {
+    margin-top: 0.35rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.site-footer {
+    color: rgba(255, 255, 255, 0.72);
+    background: var(--ink);
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 575.98px) {
+    .showcase-hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-panel {
+        padding: 1.5rem;
+    }
+}

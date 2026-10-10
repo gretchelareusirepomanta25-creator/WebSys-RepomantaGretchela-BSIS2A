@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fff8f0">
+    <title>BU SmartLockNgo! | Secure Campus Lockers</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header class="welcome-banner">
+        <p class="eyebrow">BU POLANGUI CAMPUS SERVICE</p>
+        <h1>Welcome to BU SmartLockNgo!</h1>
+        <p class="welcome-copy">A safe place for your things, so you can focus on what matters.</p>
+        <p id="currentTime" class="current-time" aria-live="polite"></p>
+    </header>
+
+    <nav class="site-nav" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#tasks">Task list</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <main>
+        <div class="page-toolbar">
+            <p>Your campus storage companion</p>
+            <button id="themeToggle" class="button button-secondary" type="button" aria-pressed="false">Switch to dark mode</button>
+        </div>
+
+        <div class="content-grid">
+            <section id="about" class="card">
+                <p class="eyebrow">WHO WE ARE</p>
+                <h2>About Us</h2>
+                <p>BU SmartLock provides secure, affordable, and convenient locker rentals for students and faculty. Store your belongings with confidence while you focus on your day.</p>
+            </section>
+
+            <section id="services" class="card">
+                <p class="eyebrow">SIMPLE, SECURE STORAGE</p>
+                <h2>Our Services</h2>
+                <p>Choose hourly or monthly locker rentals for bags, books, gadgets, and other personal belongings. Enjoy secure storage and a straightforward rental experience on campus.</p>
+            </section>
+
+            <section id="tasks" class="card">
+                <p class="eyebrow">STAY ORGANIZED</p>
+                <h2>Your Task List</h2>
+                <p>Add a reminder for the things you need to do today.</p>
+                <div class="task-entry">
+                    <label class="visually-hidden" for="taskInput">New task</label>
+                    <input type="text" id="taskInput" placeholder="For example, pick up a locker key">
+                    <button id="addTaskButton" class="button" type="button">Add task</button>
+                </div>
+                <ul id="taskList" class="task-list" aria-live="polite"></ul>
+            </section>
+
+            <section id="contact" class="card">
+                <p class="eyebrow">WE'RE HERE TO HELP</p>
+                <h2>Contact Us</h2>
+                <p>Send us a message and our team will get back to you.</p>
+                <form id="contactForm">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" autocomplete="name" required>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" autocomplete="email" required>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                    <button class="button" type="submit">Send message</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 BU SmartLockNgo! <span>·</span> Secure storage, made simple.</p>
+    </footer>
+
+    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalMessage">
+        <div class="modal-content">
+            <p id="modalMessage"></p>
+            <button id="closeModal" class="button" type="button">Close</button>
+        </div>
+    </div>
+</body>
+</html>

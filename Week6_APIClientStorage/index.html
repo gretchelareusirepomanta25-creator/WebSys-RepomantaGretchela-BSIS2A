@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Week 6 laboratory showcase for browser storage and API integration projects.">
+    <title>My Web APIs Lab | Week 6 Showcase</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="lab.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark site-navbar" aria-label="Main navigation">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html"> MyWeb APIs Lab</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation" aria-controls="mainNavigation" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNavigation">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Local_storage.html">Local Storage</a></li>
+                        <li class="nav-item"><a class="nav-link" href="user_preferences.html">Preferences</a></li>
+                        <li class="nav-item"><a class="nav-link" href="weather_api.html">Weather</a></li>
+                        <li class="nav-item"><a class="nav-link" href="github_api.html">GitHub</a></li>
+                        <li class="nav-item"><a class="nav-link" href="map_api.html">Maps</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="showcase-hero">
+            <div class="container py-5">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-7">
+                        <p class="section-kicker">Week 6 laboratory submission</p>
+                        <h1 class="display-3 fw-bold">Browser storage meets live APIs.</h1>
+                        <p class="lead mt-4">A collection of focused web experiments using Local Storage, OpenWeatherMap, GitHub, and Google Maps.</p>
+                        <div class="d-flex flex-wrap gap-3 mt-4">
+                            <a class="btn btn-light btn-lg" href="#projects">Explore projects</a>
+                            <a class="btn btn-outline-light btn-lg" href="Local_storage.html">Try local storage</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="hero-panel">
+                            <span class="hero-panel-label">Project focus</span>
+                            <h2 class="h3 mt-3">Small pages, real browser features.</h2>
+                            <p class="mb-0">Each project demonstrates a practical interaction that can be tested directly in the browser.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5" id="projects">
+            <div class="container">
+                <div class="row mb-4">
+                    <div class="col-lg-8">
+                        <p class="section-kicker">Project directory</p>
+                        <h2 class="display-6 fw-bold">Choose a laboratory page</h2>
+                        <p class="text-secondary mb-0">Open a project to test the feature and inspect its result.</p>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-6 col-xl-4">
+                        <article class="project-card h-100">
+                            <div class="project-number">01</div>
+                            <h3 class="h4">Local Storage</h3>
+                            <p>Save a name in the browser and load it again without a server.</p>
+                            <a class="btn btn-sm btn-outline-dark mt-auto" href="Local_storage.html">Open project <span aria-hidden="true">&rarr;</span></a>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <article class="project-card h-100">
+                            <div class="project-number">02</div>
+                            <h3 class="h4">User Preferences</h3>
+                            <p>Store theme and language choices, then restore them on return.</p>
+                            <a class="btn btn-sm btn-outline-dark mt-auto" href="user_preferences.html">Open project <span aria-hidden="true">&rarr;</span></a>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <article class="project-card h-100">
+                            <div class="project-number">03</div>
+                            <h3 class="h4">Weather Checker</h3>
+                            <p>Search a city and retrieve live weather information from an API.</p>
+                            <a class="btn btn-sm btn-outline-dark mt-auto" href="weather_api.html">Open project <span aria-hidden="true">&rarr;</span></a>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <article class="project-card h-100">
+                            <div class="project-number">04</div>
+                            <h3 class="h4">GitHub Lookup</h3>
+                            <p>Find a GitHub user and display public profile activity.</p>
+                            <a class="btn btn-sm btn-outline-dark mt-auto" href="github_api.html">Open project <span aria-hidden="true">&rarr;</span></a>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <article class="project-card h-100">
+                            <div class="project-number">05</div>
+                            <h3 class="h4">Google Maps</h3>
+                            <p>Search for a place and center an interactive map on the result.</p>
+                            <a class="btn btn-sm btn-outline-dark mt-auto" href="map_api.html">Open project <span aria-hidden="true">&rarr;</span></a>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <article class="project-card project-card-accent h-100">
+                            <div class="project-number">LAB</div>
+                            <h3 class="h4">What connects them?</h3>
+                            <p>Every page uses a focused form, browser JavaScript, and a visible result state.</p>
+                            <a class="btn btn-sm btn-light mt-auto" href="#about">View lab notes <span aria-hidden="true">&darr;</span></a>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="lab-notes py-5" id="about">
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    <div class="col-lg-5">
+                        <p class="section-kicker">Lab notes</p>
+                        <h2 class="display-6 fw-bold">Built for quick experiments.</h2>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="row g-3">
+                            <div class="col-sm-4"><div class="note-item"><strong>Storage</strong><span>Remember choices locally</span></div></div>
+                            <div class="col-sm-4"><div class="note-item"><strong>APIs</strong><span>Request live information</span></div></div>
+                            <div class="col-sm-4"><div class="note-item"><strong>Bootstrap</strong><span>Keep the interface consistent</span></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="personal-note py-5" aria-labelledby="personalNoteTitle">
+            <div class="container text-center">
+                <p class="section-kicker">A note from the creator</p>
+                <h2 class="h2 fw-bold" id="personalNoteTitle">Thank you for visiting my laboratory.</h2>
+                <p class="personal-note-text mx-auto mb-0">
+                    This is My Week 6 Web APIs Laboratory submission: Client-Side Storage & API Integration. I hope you enjoy exploring these projects
+                    and seeing how browser storage, APIs, and Bootstrap work together in one collection.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer py-4">
+        <div class="container d-flex flex-wrap justify-content-between gap-2">
+            <span>Week 6 Web APIs Laboratory</span>
+            <span>Local Storage &middot; APIs &middot; Bootstrap</span>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

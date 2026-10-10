@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Local Storage Example</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="lab.css">
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-dark site-navbar" aria-label="Main navigation">
+			<div class="container">
+				<a class="navbar-brand fw-bold" href="index.html">Web APIs Lab</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation" aria-controls="mainNavigation" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+				<div class="collapse navbar-collapse" id="mainNavigation">
+					<ul class="navbar-nav ms-auto">
+						<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+						<li class="nav-item"><a class="nav-link active" aria-current="page" href="Local_storage.html">Local Storage</a></li>
+						<li class="nav-item"><a class="nav-link" href="user_preferences.html">Preferences</a></li>
+						<li class="nav-item"><a class="nav-link" href="weather_api.html">Weather</a></li>
+						<li class="nav-item"><a class="nav-link" href="github_api.html">GitHub</a></li>
+						<li class="nav-item"><a class="nav-link" href="map_api.html">Maps</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<main class="container py-5">
+		<div class="row justify-content-center">
+			<div class="col-lg-7">
+				<section class="project-card">
+					<p class="section-kicker">Browser storage</p>
+					<h1 class="display-5 fw-bold" id="pageTitle">Save user preferences</h1>
+					<label class="form-label mt-3" for="username" id="nameLabel">Enter name</label>
+					<input class="form-control" type="text" id="username">
+					<label class="form-label mt-3" for="theme" id="themeLabel">Theme</label>
+					<select class="form-select" id="theme" onchange="saveTheme()">
+						<option value="light">Light mode</option>
+						<option value="dark">Dark mode</option>
+					</select>
+					<label class="form-label mt-3" for="language" id="languageLabel">Language</label>
+					<select class="form-select" id="language" onchange="saveLanguage()">
+						<option value="en">English</option>
+						<option value="fil">Filipino</option>
+						<option value="es">Spanish</option>
+						<option value="fr">French</option>
+						<option value="ja">Japanese</option>
+					</select>
+					<div class="d-flex flex-wrap gap-2 mt-3">
+						<button class="btn btn-dark" id="saveButton" onclick="saveData()">Save</button>
+						<button class="btn btn-outline-dark" id="loadButton" onclick="loadData()">Load</button>
+					</div>
+					<p class="mt-3 mb-0" id="display" aria-live="polite"></p>
+				</section>
+			</div>
+		</div>
+	</main>
+
+	<footer class="site-footer py-4"><div class="container" id="footerText">Week 6 Web APIs Laboratory</div></footer>
+
+	<script>
+		const translations = {
+			en: {
+				title: "Save user preferences", name: "Enter name", theme: "Theme", language: "Language",
+				save: "Save", load: "Load", saved: "Data saved!", welcome: "Welcome, ", empty: "No data saved!", footer: "Week 6 Web APIs Laboratory"
+			},
+			fil: {
+				title: "I-save ang mga kagustuhan", name: "Ilagay ang pangalan", theme: "Tema", language: "Wika",
+				save: "I-save", load: "I-load", saved: "Na-save ang datos!", welcome: "Maligayang pagbabalik, ", empty: "Walang naka-save na datos!", footer: "Laboratoryo sa Web APIs - Linggo 6"
+			},
+			es: {
+				title: "Guardar preferencias", name: "Introduzca el nombre", theme: "Tema", language: "Idioma",
+				save: "Guardar", load: "Cargar", saved: "Datos guardados", welcome: "Bienvenido, ", empty: "No hay datos guardados", footer: "Laboratorio de Web APIs - Semana 6"
+			},
+			fr: {
+				title: "Enregistrer les préférences", name: "Entrez le nom", theme: "Thème", language: "Langue",
+				save: "Enregistrer", load: "Charger", saved: "Données enregistrées", welcome: "Bienvenue, ", empty: "Aucune donnée enregistrée", footer: "Laboratoire Web APIs - Semaine 6"
+			},
+			ja: {
+				title: "設定を保存", name: "名前を入力", theme: "テーマ", language: "言語",
+				save: "保存", load: "読み込む", saved: "データを保存しました", welcome: "ようこそ、", empty: "保存されたデータはありません", footer: "Web API ラボ - 第6週"
+			}
+		};
+
+		function saveData() {
+			const name = document.getElementById("username").value;
+			localStorage.setItem("userName", name);
+			const language = translations[localStorage.getItem("language") || "en"];
+			alert(language.saved);
+		}
+
+		function loadData() {
+			const name = localStorage.getItem("userName");
+			const language = translations[localStorage.getItem("language") || "en"];
+			document.getElementById("display").innerText = name
+				? language.welcome + name
+				: language.empty;
+		}
+
+		function saveTheme() {
+			const theme = document.getElementById("theme").value;
+			localStorage.setItem("theme", theme);
+			applyTheme(theme);
+		}
+
+		function applyTheme(theme) {
+			document.body.classList.toggle("dark-mode", theme === "dark");
+			document.getElementById("theme").value = theme;
+		}
+
+		function saveLanguage() {
+			const language = document.getElementById("language").value;
+			localStorage.setItem("language", language);
+			applyLanguage(language);
+		}
+
+		function applyLanguage(languageCode) {
+			const language = translations[languageCode] || translations.en;
+			document.getElementById("language").value = languageCode;
+			document.getElementById("pageTitle").textContent = language.title;
+			document.getElementById("nameLabel").textContent = language.name;
+			document.getElementById("themeLabel").textContent = language.theme;
+			document.getElementById("languageLabel").textContent = language.language;
+			document.getElementById("saveButton").textContent = language.save;
+			document.getElementById("loadButton").textContent = language.load;
+			document.getElementById("footerText").textContent = language.footer;
+		}
+
+		applyTheme(localStorage.getItem("theme") || "light");
+		applyLanguage(localStorage.getItem("language") || "en");
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

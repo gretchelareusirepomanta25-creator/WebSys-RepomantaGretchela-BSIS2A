@@ -1,0 +1,501 @@
+:root {
+    --rose-50: #fff6f8;
+    --rose-100: #fde8ee;
+    --rose-200: #f5cbd8;
+    --rose-300: #eda9bd;
+    --rose-500: #c64f78;
+    --rose-600: #b83d68;
+
+    --berry-700: #713147;
+    --berry-900: #3f2530;
+
+    --ink: #392d32;
+    --muted: #786b71;
+    --paper: #ffffff;
+
+    --border: #f0dce3;
+    --shadow: 0 8px 25px rgba(113, 49, 71, 0.07);
+    --shadow-hover: 0 14px 32px rgba(113, 49, 71, 0.12);
+}
+
+/* ========================================
+   1. GENERAL PAGE DESIGN
+======================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body.bg-light {
+    min-height: 100vh;
+    color: var(--ink);
+
+    background-color: var(--rose-50) !important;
+
+    background-image:
+        radial-gradient(
+            rgba(245, 203, 216, 0.45) 1px,
+            transparent 1px
+        );
+
+    background-size: 24px 24px;
+
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Main content width */
+
+main.container {
+    max-width: 1180px;
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+}
+
+/* ========================================
+   2. NAVIGATION BAR
+======================================== */
+
+.navbar.navbar-dark.bg-dark {
+    background: linear-gradient(
+        120deg,
+        var(--berry-900),
+        var(--berry-700)
+    ) !important;
+
+    border-bottom: 4px solid var(--rose-500);
+
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    box-shadow: 0 4px 18px rgba(63, 37, 48, 0.12);
+}
+
+.navbar-brand {
+    color: #fff7f9 !important;
+
+    font-size: 1.15rem;
+    font-weight: 750;
+    letter-spacing: 0.04em;
+
+    transition: color 0.25s ease;
+}
+
+.navbar-brand:hover {
+    color: var(--rose-200) !important;
+}
+
+/* ========================================
+   3. BOOTSTRAP GRID SPACING
+======================================== */
+
+main .row {
+    align-items: stretch;
+}
+
+main .row > [class*="col-"] {
+    display: flex;
+}
+
+/* ========================================
+   4. CARDS
+======================================== */
+
+.card {
+    width: 100%;
+    height: 100%;
+
+    border: 1px solid rgba(245, 203, 216, 0.9);
+    border-radius: 18px;
+
+    background-color: rgba(255, 255, 255, 0.96);
+
+    box-shadow: var(--shadow) !important;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: var(--shadow-hover) !important;
+
+    border-color: var(--rose-300);
+}
+
+.card-body {
+    padding: 1.8rem;
+}
+
+/* ========================================
+   5. CARD TITLES
+======================================== */
+
+.card-title {
+    position: relative;
+
+    margin-bottom: 1.6rem;
+    padding-bottom: 0.85rem;
+
+    color: var(--berry-700);
+
+    font-size: 1.25rem;
+    font-weight: 750;
+}
+
+.card-title::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 45px;
+    height: 4px;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        90deg,
+        var(--rose-500),
+        var(--rose-200)
+    );
+}
+
+/* ========================================
+   6. FORM LABELS
+======================================== */
+
+.form-label {
+    margin-bottom: 0.45rem;
+
+    color: var(--berry-700);
+
+    font-size: 0.92rem;
+    font-weight: 650;
+}
+
+/* ========================================
+   7. INPUT FIELDS
+======================================== */
+
+.form-control {
+    min-height: 46px;
+
+    padding: 0.7rem 0.9rem;
+
+    border: 1.5px solid #ead7de;
+    border-radius: 10px;
+
+    color: var(--ink);
+    background-color: #fffdfd;
+
+    font-size: 0.95rem;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background-color 0.25s ease;
+}
+
+.form-control:hover {
+    border-color: var(--rose-300);
+}
+
+.form-control:focus {
+    border-color: var(--rose-500);
+
+    background-color: #fff;
+
+    box-shadow: 0 0 0 4px rgba(198, 79, 120, 0.13);
+
+    outline: none;
+}
+
+.form-control::placeholder {
+    color: #aa9ba2;
+}
+
+/* Consistent spacing */
+
+#userForm .mb-2,
+#userForm .mb-3 {
+    margin-bottom: 1.15rem !important;
+}
+
+/* ========================================
+   8. SAVE BUTTON
+======================================== */
+
+#userForm .btn-primary {
+    min-height: 47px;
+
+    margin-top: 0.3rem;
+
+    border: none;
+    border-radius: 10px;
+
+    background: linear-gradient(
+        120deg,
+        var(--rose-500),
+        #d45d86
+    );
+
+    color: white;
+
+    font-size: 0.96rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+
+    box-shadow: 0 5px 13px rgba(198, 79, 120, 0.18);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+#userForm .btn-primary:hover {
+    background: linear-gradient(
+        120deg,
+        var(--rose-600),
+        var(--berry-700)
+    );
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 18px rgba(113, 49, 71, 0.22);
+}
+
+#userForm .btn-primary:active {
+    transform: scale(0.98);
+}
+
+#userForm .btn-primary:focus-visible {
+    outline: 3px solid var(--rose-300);
+    outline-offset: 3px;
+}
+
+/* ========================================
+   9. USER LIST
+======================================== */
+
+#userList {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.8rem;
+
+    font-size: 0.9rem;
+}
+
+/* Individual user item */
+
+#userList .list-group-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 1rem;
+
+    padding: 1rem 1.1rem;
+
+    border: 1px solid var(--border);
+    border-radius: 12px !important;
+
+    color: var(--ink);
+    background-color: #fff;
+
+    overflow-wrap: anywhere;
+
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+#userList .list-group-item:hover {
+    background-color: #fff7fa;
+
+    border-color: var(--rose-300);
+
+    transform: translateX(3px);
+
+    box-shadow: 0 5px 14px rgba(113, 49, 71, 0.06);
+}
+
+/* User name */
+
+#userList .fw-semibold {
+    color: var(--berry-700);
+
+    font-size: 0.98rem;
+    font-weight: 700 !important;
+
+    margin-bottom: 0.2rem;
+}
+
+/* User email and other secondary information */
+
+#userList .text-muted {
+    color: var(--muted) !important;
+
+    font-size: 0.84rem;
+    line-height: 1.6;
+}
+
+/* ========================================
+   10. DELETE BUTTON
+======================================== */
+
+#userList .btn-outline-danger {
+    flex-shrink: 0;
+
+    padding: 0.4rem 0.8rem;
+
+    border: 1px solid #e7a0b4;
+    border-radius: 8px;
+
+    color: #a83d5b;
+    background-color: #fff7f9;
+
+    font-size: 0.82rem;
+    font-weight: 650;
+
+    transition:
+        color 0.2s ease,
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+#userList .btn-outline-danger:hover {
+    border-color: #a83d5b;
+
+    background-color: #a83d5b;
+    color: white;
+
+    transform: translateY(-1px);
+}
+
+#userList .btn-outline-danger:focus-visible {
+    outline: 3px solid var(--rose-300);
+    outline-offset: 2px;
+}
+
+/* ========================================
+   11. SUCCESS AND ERROR MESSAGES
+======================================== */
+
+#msg .alert {
+    margin-bottom: 0;
+
+    padding: 0.8rem 1rem;
+
+    border: 1px solid transparent;
+    border-radius: 10px;
+
+    font-size: 0.9rem;
+}
+
+#msg .alert-success {
+    border-color: #b7e4c7;
+
+    background-color: #f0fff4;
+    color: #216e43;
+}
+
+#msg .alert-danger {
+    border-color: #f3b7c1;
+
+    background-color: #fff1f2;
+    color: #a12645;
+}
+
+/* ========================================
+   12. KEYBOARD ACCESSIBILITY
+======================================== */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline-offset: 3px;
+}
+
+/* ========================================
+   13. RESPONSIVE DESIGN
+======================================== */
+
+@media (max-width: 991.98px) {
+    main.container {
+        padding-top: 2rem !important;
+    }
+
+    main .row {
+        row-gap: 1.5rem !important;
+    }
+
+    main .row > [class*="col-"] {
+        display: block;
+    }
+
+    .card {
+        height: auto;
+    }
+}
+
+@media (max-width: 575.98px) {
+    main.container {
+        padding-right: 1rem;
+        padding-left: 1rem;
+
+        padding-top: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
+    }
+
+    .navbar-brand {
+        font-size: 1rem;
+    }
+
+    .card {
+        border-radius: 14px;
+    }
+
+    .card-body {
+        padding: 1.2rem;
+    }
+
+    .card-title {
+        font-size: 1.15rem;
+    }
+
+    #userList .list-group-item {
+        padding: 0.8rem;
+        gap: 0.6rem;
+    }
+
+    #userList .btn-outline-danger {
+        padding: 0.35rem 0.6rem;
+    }
+}
+
+/* ========================================
+   14. REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
